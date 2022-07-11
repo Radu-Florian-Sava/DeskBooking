@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeskBookingAPI", "DeskBookingAPI\DeskBookingAPI.csproj", "{0F1E4CE0-E828-4DD1-BFB9-0C7D723A7824}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeskBookingAPI.Data", "DeskBookingAPI.Data\DeskBookingAPI.Data.csproj", "{7A7577A3-0378-4669-B6B6-685E9A31D99E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0F1E4CE0-E828-4DD1-BFB9-0C7D723A7824}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F1E4CE0-E828-4DD1-BFB9-0C7D723A7824}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F1E4CE0-E828-4DD1-BFB9-0C7D723A7824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A7577A3-0378-4669-B6B6-685E9A31D99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A7577A3-0378-4669-B6B6-685E9A31D99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A7577A3-0378-4669-B6B6-685E9A31D99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A7577A3-0378-4669-B6B6-685E9A31D99E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
