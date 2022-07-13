@@ -11,7 +11,18 @@ namespace DeskBookingAPI.Data
     {
         public DeskBookingContext(DbContextOptions options) : base(options)
         {
-
+           
         }
+
+        public DbSet<Company> Companies { get; set; }
+
+        public DbSet<Employee> Employees { get; set; }
+
+        public DbSet<CompanyRoom> CompanyRooms { get; set; }
+
+        public DbSet<Desk> Desks { get; set; }
+
+        public DbSet<Booking> Bookings { get; set; }
+
     }
 }
