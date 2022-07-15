@@ -8,7 +8,7 @@ namespace DeskBookingAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompanyController : ControllerBase
+    public class CompanyController : Controller
     {
         private readonly DeskBookingContext _deskBookingContext;
 
