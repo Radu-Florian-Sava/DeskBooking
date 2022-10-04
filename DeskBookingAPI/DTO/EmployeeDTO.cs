@@ -10,7 +10,7 @@ namespace DeskBookingAPI.DTO
 
         public string? Email { get; set; }
 
-        public string? Role { get; set; }
+        public int? EmployeeRoleId { get; set; }
 
         public int? CompanyId { get; set; }
     }

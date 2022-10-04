@@ -56,13 +56,13 @@ namespace DeskBookingAPI.Controllers
 
             var favDesk = _deskBookingContext.Bookings.Where(b => b.EmployeeId == empId).
                 GroupBy(b => b.DeskId).
-                OrderBy(gr => -gr.Count()).
+                OrderBy(gr => gr.Count()).
                 Select(gr => new FavDeskDTO()
                 {
                     DeskId = gr.Key,
                     NumberOfBookings = gr.Count()
                 }).
-                First();
+                Last();
             return new ObjectResult(favDesk);
         }
 
@@ -129,7 +129,7 @@ namespace DeskBookingAPI.Controllers
 
             employee.Email = employeeDTO.Email??employee.Email;
 
-            employee.Role = employeeDTO.Role??employee.Role;
+            employee.EmployeeRoleId = employeeDTO.EmployeeRoleId ?? employee.EmployeeRoleId;
 
             _deskBookingContext.Employees.Update(employee);
             _deskBookingContext.SaveChanges();

@@ -3,6 +3,7 @@ using System;
 using DeskBookingAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DeskBookingAPI.Data.Migrations
 {
     [DbContext(typeof(DeskBookingContext))]
-    partial class DeskBookingContextModelSnapshot : ModelSnapshot
+    [Migration("20220719075943_AddedEmployeeRole")]
+    partial class AddedEmployeeRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,18 +143,17 @@ namespace DeskBookingAPI.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("EmployeeRoleId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CompanyId");
-
-                    b.HasIndex("EmployeeRoleId");
 
                     b.ToTable("Employees");
                 });
@@ -254,15 +256,7 @@ namespace DeskBookingAPI.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DeskBookingAPI.Data.EmployeeRole", "EmployeeRole")
-                        .WithMany()
-                        .HasForeignKey("EmployeeRoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Company");
-
-                    b.Navigation("EmployeeRole");
                 });
 
             modelBuilder.Entity("DeskBookingAPI.Data.Company", b =>

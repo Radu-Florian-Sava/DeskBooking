@@ -48,7 +48,7 @@ namespace DeskBookingAPI.Controllers
             _deskBookingContext.Companies.Add(company);
             _deskBookingContext.SaveChanges();
 
-            return Ok();
+            return Ok(company);
         }
 
         // PUT api/<CompanyController>/5
@@ -72,7 +72,7 @@ namespace DeskBookingAPI.Controllers
             _deskBookingContext.Companies.Update(previousCompany);
             _deskBookingContext.SaveChanges();
 
-            return Ok();
+            return Ok(previousCompany);
         }
 
         // DELETE api/<CompanyController>/5
